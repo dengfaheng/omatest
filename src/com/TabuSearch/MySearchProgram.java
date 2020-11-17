@@ -55,7 +55,7 @@ public class MySearchProgram implements TabuSearchListener{
 		
 		MySearchProgram.setIterationsDone(0);
 		tabuSearch.addTabuSearchListener( this );
-		tabuSearch.addTabuSearchListener((MyTabuList)tabuList);
+		//tabuSearch.addTabuSearchListener((MyTabuList)tabuList);
 		
 	}
 	
@@ -70,7 +70,7 @@ public class MySearchProgram implements TabuSearchListener{
 		bestCost 	= getCostFromObjective(sol.getObjectiveValue());
 		bestRoutes 	= cloneRoutes(sol.getRoutes());
 		bestIndex 	= tabuSearch.getIterationsCompleted() + 1; // plus the current one
-		
+
 		if(graphicsVisible) {
 			panel.bestCost = bestCost;
 			panel.bestIndex = bestIndex;

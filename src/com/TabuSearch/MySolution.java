@@ -175,7 +175,7 @@ public class MySolution extends SolutionAdapter{
 		for( int i = 0; i < instance.getDepotsNr(); ++i) { //nel nostro caso 1 solo deposito
 			debug.append("\n");
 			assignedCustomersNr = instance.getDepot(i).getAssignedCustomersNr(); //tutti e "100" customer dell'istanza in ingresso
-			if(instance.getParameters().getStartClient() != -1) { //quindi il primo customer è sempre randomico!!! fatto una sola volta nella prima iterazione (primo deposito) perchè le operazioni di get e set vengono fatte solamente qui (1 chiamata per ciascun metodo)
+			if(instance.getParameters().getStartClient() != -1) { //quindi il primo customer ? sempre randomico!!! fatto una sola volta nella prima iterazione (primo deposito) perch? le operazioni di get e set vengono fatte solamente qui (1 chiamata per ciascun metodo)
 				startCustomer = instance.getParameters().getStartClient();
 			}else{
 				startCustomer = instance.getRandom().nextInt(assignedCustomersNr);
@@ -192,10 +192,10 @@ public class MySolution extends SolutionAdapter{
 				int k;
 				for(k= 0; k < instance.getVehiclesNr() - 1; ++k){
 					// stores the pointer to the current route
-					route = routes[i][k]; //nel nostro caso i è sempre 0 (1 deposito) e k va da 0 a maxNumVehicle
+					route = routes[i][k]; //nel nostro caso i ? sempre 0 (1 deposito) e k va da 0 a maxNumVehicle
 
 					// accept on the route only if satisfy the load and service duration
-					if (customerChosenPtr.getCapacity() + route.getCost().load <= route.getLoadAdmited()  //se c'è spazio nel veicolo 
+					if (customerChosenPtr.getCapacity() + route.getCost().load <= route.getLoadAdmited()  //se c'? spazio nel veicolo 
 					 && customerChosenPtr.getServiceDuration() + route.getDuration()  <= route.getDurationAdmited()){ //e se riesco a servirlo in tempo
 						insertBestTravel(instance, route, customerChosenPtr);
 						evaluateRoute(route);
@@ -289,7 +289,7 @@ public class MySolution extends SolutionAdapter{
 				
 				customerK.setArriveTime(totalTime);
 				// add waiting time if any
-				waitingTime = Math.max(0, customerK.getStartTw() - totalTime); //ritorna zero se il customer è pronto a ricevere il pacco altrimenti ritorna il tempo di attesa quindi potrei andare da un altro customer
+				waitingTime = Math.max(0, customerK.getStartTw() - totalTime); //ritorna zero se il customer ? pronto a ricevere il pacco altrimenti ritorna il tempo di attesa quindi potrei andare da un altro customer
 				route.getCost().waitingTime += waitingTime;
 				// update customer timings information
 				customerK.setWaitingTime(waitingTime);

@@ -28,6 +28,7 @@ public class MDVRPTW {
 			// check to see if an input file was specified
 			parameters.updateParameters(args);
 			parameters.setInputFileName("../input/C101.txt");
+
 			if(parameters.getInputFileName() == null){
 				System.out.println("You must specify an input file name");
 				return;

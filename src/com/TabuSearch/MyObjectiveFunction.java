@@ -36,7 +36,7 @@ public class MyObjectiveFunction implements ObjectiveFunction {
         	     	
         	return new double[]{Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, sol.getCost().travelTime, sol.getCost().loadViol, sol.getCost().durationViol, sol.getCost().twViol};
         	
-        }   // end if: move == null
+        }
 
         // Else calculate incrementally
         else {
